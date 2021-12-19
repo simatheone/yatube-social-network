@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Group, Post
+from .models import Comment, Follow, Group, Post
 from yatube.settings import EMPTY_VALUE_DISPLAY
 
 
@@ -15,6 +15,7 @@ class PostAdmin(admin.ModelAdmin):
         'pub_date',
         'author',
         'group',
+        'image'
     )
     list_editable = ('group',)
     search_fields = ('text',)
@@ -29,3 +30,31 @@ class GroupAdmin(admin.ModelAdmin):
     """
     list_display = ('title',)
     empty_value_display = EMPTY_VALUE_DISPLAY
+
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    """
+    Класс для отоброжения комментариев в админ панели.
+    """
+    list_display = (
+        'post',
+        'text',
+        'author',
+        'created'
+    )
+    search_fields = ('text',)
+    list_filter = ('created',)
+    empty_value_display = EMPTY_VALUE_DISPLAY
+
+
+@admin.register(Follow)
+class FollowAdmin(admin.ModelAdmin):
+    """
+    Класс для отоброжения подписок в админ панели.
+    """
+    list_display = (
+        'user',
+        'author'
+    )
+    search_fields = ('user',)
