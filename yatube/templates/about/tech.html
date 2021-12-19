@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Технологии{% endblock %}
+{% block content %}
+  <div class="container py-md-5 py-2 px-md-2">
+    <div class="card-deck row">
+      <div class="card my-sm-2 m-md-2 col-sm">
+        <a href="https://www.python.org/" alt="Python official site">
+          <img class="card-img-top mt-1 mx-1" 
+               src="{% static 'img/tech/python.png' %}" 
+               alt="Python" style="width: 16%;">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">Python</h5>
+          <p class="card-text">
+            Один из основных инструментов для разработки данного проекта.
+            На языке Python была написана вся логики работы сайта, которая
+            в совместной работе с Django дала такой прекрасный результат.
+            Обычный пользователь не видит код Python'a и нверняка не
+            подозревает, что он тут использовался, но если вы зайдете на
+            мой GitHub, его можно найти в разделе 
+            <a href="{% url 'about:author'%}" alt="link to page about author">
+               "Об авторе",
+            </a>
+            то точно сможете его увидеть и насладиться им.
+          </p>
+          <p class="card-text">
+            <small class="text-muted">Последнее обновление 1 час назад.</small>
+          </p>
+        </div>
+      </div>
+      <div class="card my-sm-2 m-md-2 col-sm">
+        <a href="https://www.djangoproject.com/" alt="Django official site">
+          <img class="card-img-top" 
+               src="{% static 'img/tech/django.png' %}" 
+               alt="Django" style="width: 25%;">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">Django</h5>
+          <p class="card-text">
+            Второй по значимости инструмент данного проекта.
+            Django отвечает за всю бэкендовскую часть.
+            Какого пользователя на какую страницу направить/перенаправить,
+            что показывать на странице, а что нет, обработка запросов пользователей,
+            работа с базой данных, и многое многое другое, чего не 
+            видит обычный пользователь - все это Django.
+          </p>
+          <p class="card-text">
+            <small class="text-muted">Последнее обновление 1 час назад.</small>
+          </p>
+        </div>
+      </div>
+      <div class="card my-sm-2 m-md-2 col-sm">
+        <a href="https://getbootstrap.com/" alt="Bootstrap official site">
+          <img class="card-img-top mt-1 mx-1" 
+              src="{% static 'img/tech/bootstrap-logo.png' %}" 
+              alt="Bootstrap" style="width: 17%;">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">Bootstrap</h5>
+          <p class="card-text">
+            Bootstrap использовался для оформления визуальной части сайта.
+            Контент сайта был оптимизированна под любые форматы экранов.
+            И все это благодрая Bootstrap. 
+            Быстро, просто и надежно (но это не точно).
+          </p>
+          <p class="card-text">
+            <small class="text-muted">Последнее обновление 1 час назад.</small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
