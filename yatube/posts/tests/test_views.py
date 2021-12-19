@@ -390,6 +390,7 @@ class FollowTest(TestCase):
         """
         follow_count = Follow.objects.filter(author=self.author).count()
         response_to_follow = self.auth_author_2.get(self.follow_url)
+        self.assertEqual(response_to_follow.status_code, HTTPStatus.FOUND)
         self.assertEqual(
             Follow.objects.filter(author=self.author).count(),
             follow_count + 1
@@ -402,6 +403,7 @@ class FollowTest(TestCase):
         """
         unfollow_count = Follow.objects.filter(author=self.author).count()
         response_to_unfollow = self.auth_user.get(self.unfollow_url)
+        self.assertEqual(response_to_unfollow.status_code, HTTPStatus.FOUND)
         self.assertEqual(
             Follow.objects.filter(author=self.author).count(),
             unfollow_count - 1
@@ -414,6 +416,7 @@ class FollowTest(TestCase):
         """
         follow_count = Follow.objects.filter(author=self.author).count()
         response_to_follow = self.auth_user.get(self.follow_url)
+        self.assertEqual(response_to_follow.status_code, HTTPStatus.FOUND)
         self.assertEqual(
             Follow.objects.filter(author=self.author).count(),
             follow_count
@@ -425,7 +428,7 @@ class FollowTest(TestCase):
         """
         follow_count = Follow.objects.filter(author=self.author).count()
         response_to_follow = self.auth_author.get(self.follow_url)
-        print(response_to_follow.status_code)
+        self.assertEqual(response_to_follow.status_code, HTTPStatus.FOUND)
         self.assertEqual(
             Follow.objects.filter(author=self.author).count(),
             follow_count
