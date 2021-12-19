@@ -1,5 +1,6 @@
 from shutil import rmtree
 from tempfile import mkdtemp
+from http import HTTPStatus
 
 from django.conf import settings
 from django.core.cache import cache
@@ -400,7 +401,7 @@ class FollowTest(TestCase):
         отписываться от авторов.
         """
         unfollow_count = Follow.objects.filter(author=self.author).count()
-        response_to_unfollow = self.auth_user.get(self.unfollow_url))
+        response_to_unfollow = self.auth_user.get(self.unfollow_url)
         self.assertEqual(
             Follow.objects.filter(author=self.author).count(),
             unfollow_count - 1
