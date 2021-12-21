@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.db.models import CheckConstraint, F, UniqueConstraint, Q
 from django.db.models.deletion import CASCADE
 
 User = get_user_model()
@@ -119,6 +120,13 @@ class Follow(models.Model):
     class Meta:
         verbose_name = 'Подписка'
         verbose_name_plural = 'Подписки'
+        constraints = [
+            UniqueConstraint(
+                fields=['user', 'author'], name='unique_follower'
+            ),
+            CheckConstraint(check=~Q(user=F('author')),
+                            name='user_cant_follow_himself'),
+        ]
 
     def __str__(self):
-        return self.user.username
+        return f'{self.user.username} подписался на {self.author.username}'

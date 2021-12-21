@@ -1,3 +1,25 @@
-# hw05_final
+# Yatube Social Network
+### Описание
+Yatube - это социальная сеть для блогеров.
+На Yatube можно создать свою страничку, на которой вы сможете делиться своими мыслями.
+Другие пользователи могут подписаться на вас и комментировать ваши посты.
 
-[![CI](https://github.com/yandex-praktikum/hw05_final/actions/workflows/python-app.yml/badge.svg?branch=master)](https://github.com/yandex-praktikum/hw05_final/actions/workflows/python-app.yml)
+### Технологии которые используются в создании проекта
+- Python 3.7
+- Django 2.2.19
+### Запуск проекта в dev-режиме
+- Установите и активируйте виртуальное окружение 'venv'
+- Установите зависимости из файла requirements.txt
+```
+pip install -r requirements.txt
+``` 
+- В папке с файлом manage.py выполните команду:
+```
+python3 manage.py runserver
+```
+
+### License
+MIT
+
+### Авторы
+Александр Свиридов

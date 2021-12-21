@@ -16,7 +16,8 @@ from posts.tests.constants import (
     GROUP_DESCRIPTION_1, GROUP_DESCRIPTION_2, GROUP_LIST_CONTEXT_TITLE,
     GROUP_TITLE, GROUP_TITLE_1, GROUP_TITLE_2, GROUP_LIST_URL, GROUP_SLUG_1,
     GROUP_SLUG_2, INDEX_CONTEXT_TITLE, INDEX_URL, PAGE_2, POST_AUTHOR,
-    POST_AUTHOR_2, POST_CREATE_URL, POST_TEXT, PROFILE_URL, REDIRECT
+    POST_AUTHOR_2, POST_CREATE_URL, POST_TEXT, PROFILE_URL, REDIRECT,
+    SMALL_IMAGE
 )
 
 
@@ -30,17 +31,9 @@ class PostPagesTest(TestCase):
     def setUpClass(cls):
         """Создание тестовой БД."""
         super().setUpClass()
-        cls.small_image = (
-            b'\x47\x49\x46\x38\x39\x61\x02\x00'
-            b'\x01\x00\x80\x00\x00\x00\x00\x00'
-            b'\xFF\xFF\xFF\x21\xF9\x04\x00\x00'
-            b'\x00\x00\x00\x2C\x00\x00\x00\x00'
-            b'\x02\x00\x01\x00\x00\x02\x02\x0C'
-            b'\x0A\x00\x3B'
-        )
         cls.upload = SimpleUploadedFile(
             name='small_image.gif',
-            content=cls.small_image,
+            content=SMALL_IMAGE,
             content_type='image/gif'
         )
         cls.image = cls.upload

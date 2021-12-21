@@ -165,7 +165,6 @@ def post_edit(request, post_id):
         instance=post
     )
     if form.is_valid():
-        print(form.non_field_errors())
         form.save()
         return redirect('posts:post_detail', post_id=post_id)
     template = 'posts/create_post.html'
@@ -200,13 +199,10 @@ def profile_follow(request, username):
     При оформлении подписки на автора, редиректит на страницу
     профиля автора.
     """
-    author = User.objects.get(username=username)
-    is_already_following = bool(
-        Follow.objects.filter(user=request.user, author=author)
-    )
-    if request.user.username != username and not is_already_following:
-        Follow.objects.create(user=request.user, author=author)
     template = 'posts:profile'
+    author = User.objects.get(username=username)
+    if request.user.username != username:
+        Follow.objects.get_or_create(user=request.user, author=author)
     return redirect(template, username=username)
 
 

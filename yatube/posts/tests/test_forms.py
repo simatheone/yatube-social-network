@@ -12,9 +12,8 @@ from posts.tests.constants import (
     FORM_ERROR, GROUP_DESCRIPTION, GROUP_TITLE, GROUP_SLUG_2, FORM_ERROR,
     POST_AUTHOR, POST_CREATE_URL, POST_TEXT, POST_TEXT_EDITED_1,
     POST_TEXT_EDITED_2, POST_TEXT_FORM_DATA_1, POST_TEXT_FORM_DATA_2,
-    PROFILE_URL
+    PROFILE_URL, SMALL_IMAGE
 )
-
 
 TEMP_MEDIA_ROOT = mkdtemp(dir=settings.BASE_DIR)
 
@@ -49,17 +48,9 @@ class PostCreateFormTest(TestCase):
         """Создание клиентов для последующего использования в тестах."""
         self.authorized_author = Client()
         self.authorized_author.force_login(self.author)
-        self.small_image = (
-            b'\x47\x49\x46\x38\x39\x61\x02\x00'
-            b'\x01\x00\x80\x00\x00\x00\x00\x00'
-            b'\xFF\xFF\xFF\x21\xF9\x04\x00\x00'
-            b'\x00\x00\x00\x2C\x00\x00\x00\x00'
-            b'\x02\x00\x01\x00\x00\x02\x02\x0C'
-            b'\x0A\x00\x3B'
-        )
         self.upload = SimpleUploadedFile(
             name='small_image.gif',
-            content=self.small_image,
+            content=SMALL_IMAGE,
             content_type='image/gif'
         )
 
