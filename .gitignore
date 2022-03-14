@@ -145,9 +145,6 @@ dmypy.json
 
 .mypy_cache
 
-# Static files
-static/
-
 # Email tester
 sent_emails/
 
@@ -157,6 +154,3 @@ htmlcov/
 .coverage.*
 coverage.xml
 *.cover
-
-# Media
-media/
