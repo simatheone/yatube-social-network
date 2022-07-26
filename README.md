@@ -18,7 +18,7 @@
 
 ## Используемые технологии
 
-:snake: Python 3.8, :desktop_computer: Django 2.2.16, :card_file_box: SQlite3, :camera_flash sorl thumbnail, :paintbrush: Bootstrap 5
+:snake: Python 3.8, :desktop_computer: Django 2.2.16, :card_file_box: SQlite3, :camera_flash: sorl thumbnail, :paintbrush: Bootstrap 5
 
 ---
 
