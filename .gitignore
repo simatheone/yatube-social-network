@@ -154,3 +154,7 @@ htmlcov/
 .coverage.*
 coverage.xml
 *.cover
+
+# Cached files
+/cache
+/posts
