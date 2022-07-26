@@ -200,12 +200,13 @@ pip install -r requirements.txt
 ```
 
 5. Выполнить миграции и суперпользователя:
+> \* Присоздании суперпользователя следовать инструкциям в терминале.
 ```bash
 python3 manage.py migrate
 python3 manage.py createsuperuser
 ```
 
-6. Запустить проект
+1. Запустить проект
 ```bash
 python3 manage.py runserver
 ```
