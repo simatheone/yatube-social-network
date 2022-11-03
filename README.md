@@ -206,7 +206,7 @@ python3 manage.py migrate
 python3 manage.py createsuperuser
 ```
 
-1. Запустить проект
+6. Запустить проект
 ```bash
 python3 manage.py runserver
 ```
