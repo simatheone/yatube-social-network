@@ -199,7 +199,7 @@ python3 -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-5. Выполнить миграции и суперпользователя:
+5. Выполнить миграции и создать суперпользователя:
 > \* Присоздании суперпользователя следовать инструкциям в терминале.
 ```bash
 python3 manage.py migrate
